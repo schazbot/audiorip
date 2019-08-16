@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # gem 'activesupport', '< 5.0'
 gem 'streamio-ffmpeg'
+gem 'bulma-rails', '~> 0.7.4'
 
 
 # Reduces boot times through caching; required in config/boot.rb
