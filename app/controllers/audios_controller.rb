@@ -1,5 +1,4 @@
 require "streamio-ffmpeg"
-
 class AudiosController < ApplicationController
   def index
   end

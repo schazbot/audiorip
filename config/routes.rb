@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get '/', to: 'audios#index'
   get '/new', to: 'audios#new'
   post '/audio', to: 'audios#create'
+  post '/search', to: 'videos#search'
+
 
 end
