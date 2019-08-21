@@ -10,9 +10,10 @@ class SongsController < ApplicationController
 
     def create
         @song = Song.new(song_params)
-        binding.pry
+        # binding.pry
         @song.save 
-        redirect_to song_url   
+        UserSong.create(user_id: 1, song_id: @song.id)
+        render :show  
     end
 
     def search
