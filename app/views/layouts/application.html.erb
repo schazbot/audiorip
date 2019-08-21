@@ -10,6 +10,54 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+      <%= link_to "Search", audio_path %>
+      </a>
+
+      <a class="navbar-item">
+      <%= link_to "See your collection", user_songs_path %>
+      </a>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  <section class="hero is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Youtube Ripper
+      </h1>
+      <h2 class="subtitle">
+        Search for tunes, rip them to your hard-drive</h2>
+    </div>
+  </div>
+</section>  
+
+<%= yield %>
+
+
+</body>
 </html>

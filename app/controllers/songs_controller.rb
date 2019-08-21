@@ -12,6 +12,7 @@ class SongsController < ApplicationController
         @song = Song.new(song_params)
         binding.pry
         @song.save 
+        UserSong.create(user: 1, song: @song.id)
         redirect_to song_url   
     end
 
