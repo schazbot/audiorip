@@ -36,6 +36,7 @@ gem "jbuilder", "~> 2.5"
 gem "streamio-ffmpeg"
 gem "bulma-rails", "~> 0.7.4"
 
+
 gem "discogs-wrapper"
 gem 'pry'
 # Reduces boot times through caching; required in config/boot.rb
