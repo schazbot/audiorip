@@ -7,7 +7,11 @@ class VideosController < ApplicationController
     results = wrapper.search(params[:query])
     # binding.pry
     resource_id = results[:results][1][:id]
-    @release_title = results[:results][1][:title]
+    # binding.pry
+    @release_artist = results[:results][1][:title].split(" - ")[0]
+    @release_title = results[:results][1][:title].split(" - ")[1]
+
+
     @thumbnail = results[:results][1][:thumb]
     @video_url = wrapper.get_release(resource_id)[:videos][0][:uri]
     render :index

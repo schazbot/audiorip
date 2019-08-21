@@ -1,0 +1,47 @@
+<body>
+<section class="hero is-primary">
+  <div class="hero-body">
+        <p class="title">
+        YouTube Ripper</p>
+        <p class="subtitle">
+        Download YouTube audio</p>
+  </div>
+</section>
+
+<section class="section">
+        <div class="container">
+                <h2 class="title"><%= @release_artist %></h2>
+                <h2 class="subtitle"><%= @release_title %></h2>
+                    <div class="container" width='10%'>
+                        <img src="<%= @thumbnail %>"/>
+                    </div>
+                <h3 class="subtitle is-inline has-text-centered	"> <%= @video_url %> </h3>
+        </div>
+        <br>
+        <form method="post" action="/audio">
+                <label for="url"></label>
+                <div class="field">
+                 <div class="control">
+                    <input class="input is-primary is-loading" type="text" id="url" name="url" placeholder="Past link here to download to desktop"
+        >
+            </div>
+        <br>
+            <input class="button is-info" type="submit" value="submit">
+        </form>
+        
+        </article>
+    </section>
+
+
+
+    <form action="<%= songs_path %>" method="POST">
+            <input type="hidden" id="artist" name="song[title]" value="<%=@release_title %>"><br>
+            <input type="hidden" id="title" name="song[title]" value="<%=@release_artist %>"><br>
+            <input type="hidden" id="video_url" name="song[video_url]" value="<%=@video_url %>"><br>
+            <input type="hidden" id="thumbnail" name="song[thumbnail]" value="<%=@thumbnail %>"><br>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input class="button is-info" type="submit" value="add song to collection">    
+        </form>
+
+   
+    </body>

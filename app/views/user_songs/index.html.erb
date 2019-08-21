@@ -1,3 +1,6 @@
+<div class="header">
+<h1>All your songs</h1>
+</div>
 <div class="columns">
 <div class="column">
     <% @user_songs.each do |us| %>
@@ -10,8 +13,7 @@
                 </figure>
                 </div>
                 <div class="media-content">
-                <p class="title is-4"><%=link_to us.song.title, song_path %></p>
-                # <h2><li><%= link_to queen.name, queen %></li></h2>
+                <p class="title is-4"><%= us.song.title%></p>
                 <p class="subtitle is-6"> <%= us.song.artist %></p>
                 </div>
             </div>
