@@ -10,13 +10,14 @@ class SongsController < ApplicationController
 
     def create
         @song = Song.new(song_params)
-        @song.save    
+        binding.pry
+        @song.save 
+        redirect_to song_url   
     end
 
     def search
         wrapper = Discogs::Wrapper.new("music search", user_token: "OLOYyBwmpfSDUfWyRGKBRNdRMKVQvKRphmmipHuL")
         results = wrapper.search(params[:query])
-        # binding.pry
         resource_id = results[:results][1][:id]
             @release_artist = results[:results][1][:title].split(" - ")[0]
             @release_title = results[:results][1][:title].split(" - ")[1]
