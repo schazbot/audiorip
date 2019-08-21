@@ -25,7 +25,7 @@ gem "jbuilder", "~> 2.5"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -35,8 +35,6 @@ gem "jbuilder", "~> 2.5"
 # gem 'activesupport', '< 5.0'
 gem "streamio-ffmpeg"
 gem "bulma-rails", "~> 0.7.4"
-
-
 gem "discogs-wrapper"
 gem 'pry'
 # Reduces boot times through caching; required in config/boot.rb

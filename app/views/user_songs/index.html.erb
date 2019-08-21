@@ -1,0 +1,22 @@
+<div class="columns">
+<div class="column">
+    <% @user_songs.each do |us| %>
+            <div class="card is-inline">
+            <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                <figure class="image is-48x48">
+                <img src="<%= us.song.thumbnail %>"/>
+                </figure>
+                </div>
+                <div class="media-content">
+                <p class="title is-4"><%=link_to us.song.title, song_path %></p>
+                # <h2><li><%= link_to queen.name, queen %></li></h2>
+                <p class="subtitle is-6"> <%= us.song.artist %></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <% end %>
+        </div>
+</div>
