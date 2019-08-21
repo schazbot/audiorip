@@ -1,13 +1,7 @@
 require "streamio-ffmpeg"
-
 class AudiosController < ApplicationController
-  def index
-  end
-
   def create
     system("youtube-dl -x --audio-format mp3 #{params[:url]}")
-    # system("youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" #{params[:url]}")
-
   end
 
   def show
