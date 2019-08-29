@@ -1,7 +1,8 @@
 class UserSongsController < ApplicationController
 
     def index
-        @user_songs = UserSong.all
+        byebug
+        @user_songs = UserSong.find_by(user_id: params[current_user.id])
     end
 
     def show

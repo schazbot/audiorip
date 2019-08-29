@@ -25,7 +25,9 @@
       </a>
 
       <a class="navbar-item">
-      <%= link_to "See your collection", user_songs_path %>
+      <% if session[:user_id] %>
+      <%= link_to "See your collection", user_path(session[:user_id]) %>
+      <% end %>
       </a>
       </div>
     </div>
@@ -33,12 +35,19 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a class="button is-primary" href='/signup'>
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <% if session[:user_id] %>
+          <a class="button is-light" href='/logout'>
+          Log Out
+          </a>
+          <%else%>
+          <a class="button is-light" href='/login'>
             Log in
           </a>
+
+          <%end%>
         </div>
       </div>
     </div>
