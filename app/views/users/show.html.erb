@@ -1,7 +1,7 @@
 <div class="columns">
 <div class="column">
-<% if @user.songs %>
-    <% @user.songs.each do |song| %>
+<% if current_user %>
+    <% current_user.songs.each do |song| %>
             <div class="card is-inline">
             <div class="card-content">
             <div class="media">

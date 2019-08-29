@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
-    before_action :require_login
-    skip_before_action :require_login, only: [:index]
+    # before_action :require_login
+    # skip_before_action :require_login, only: [:index]
 
     def index
         @songs = Song.all
@@ -12,7 +12,6 @@ class SongsController < ApplicationController
 
     def create
         @song = Song.new(song_params)
-        # binding.pry
         @song.save 
         UserSong.create(user_id: session[:user_id], song_id: @song.id)
         render :show  
