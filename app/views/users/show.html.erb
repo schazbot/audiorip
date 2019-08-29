@@ -1,21 +1,23 @@
 <div class="columns">
 <div class="column">
-    <% @user_songs.each do |us| %>
+<% if current_user %>
+    <% current_user.songs.each do |song| %>
             <div class="card is-inline">
             <div class="card-content">
             <div class="media">
                 <div class="media-left">
                 <figure class="image is-48x48">
-                <img src="<%= us.song.thumbnail %>"/>
+                <img src="<%= song.thumbnail %>"/>
                 </figure>
                 </div>
                 <div class="media-content">
-                <p class="title is-4"><%= us.song.title%></p>
-                <p class="subtitle is-6"> <%= us.song.artist %></p>
+                <p class="title is-4"><%= song.title%></p>
+                <p class="subtitle is-6"> <%= song.artist %></p>
                 </div>
             </div>
             </div>
         </div>
+        <% end %>
         <% end %>
         </div>
 </div>
